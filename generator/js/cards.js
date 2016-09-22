@@ -108,6 +108,11 @@ function card_element_subtitle(params, card_data, options) {
     return '<div class="card-element card-subtitle">' + subtitle + '</div>';
 }
 
+function card_element_source(params, card_data, options) {
+    var source = params[0] || "";
+    return '<div class="card-element card-source">' + source + '</div>';
+}
+
 function card_element_picture(params, card_data, options) {
     var url = params[0] || "";
 	var height = params[1] || "";
@@ -178,6 +183,14 @@ function card_element_text(params, card_data, options) {
     return result;
 }
 
+function card_element_html(params, card_data, options) {
+    var result = "";
+    result += '<div class="card-element card-description-line">';
+    result += '   ' + params[0];
+    result += '</div>';
+    return result;
+}
+
 function card_element_dndstats(params, card_data, options) {
     var stats = [10, 10, 10, 10, 10, 10];
     var mods = [0,0,0,0,0,0];
@@ -244,6 +257,7 @@ function card_element_empty(params, card_data, options) {
 
 var card_element_generators = {
     subtitle: card_element_subtitle,
+    source: card_element_source,
     property: card_element_property,
     rule: card_element_ruler,
     ruler: card_element_ruler,
@@ -251,11 +265,12 @@ var card_element_generators = {
     description: card_element_description,
     dndstats: card_element_dndstats,
     text: card_element_text,
+    html: card_element_html,
     bullet: card_element_bullet,
     fill: card_element_fill,
     section: card_element_section,
     disabled: card_element_empty,
-	picture: card_element_picture
+    picture: card_element_picture
 };
 
 // ============================================================================

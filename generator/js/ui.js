@@ -55,6 +55,7 @@ function ui_generate() {
     // Send the generated HTML to the new window
     // Use a delay to give the new window time to set up a message listener
     setTimeout(function () { tab.postMessage(card_html, '*') }, 500);
+    setTimeout(function () { tab.postMessage(card_html, '*') }, 1000);
 }
 
 function ui_load_sample() {
